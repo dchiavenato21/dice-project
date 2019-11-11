@@ -8,6 +8,7 @@
 public class Game
 {
     Die gameDie = new Die();
+    WeightedDie weightedDie = new WeightedDie();
     
     public void playGame()
     {
@@ -63,6 +64,27 @@ public class Game
             {
                 gameDie.roll();
                 testNum = gameDie.getValue();
+                total++;
+            }
+            return total;
+        }
+    }
+    
+    public int weightedCounter(int num)
+    {
+        if (!(num >= 1 && num <= 6))
+        {
+            System.out.println("You must enter a value between 1 and 6!");
+            return 0;
+        }
+        else
+        {
+            int total = 0;
+            int testNum = 0;
+            while (num != testNum)
+            {
+                weightedDie.roll();
+                testNum = weightedDie.getValue();
                 total++;
             }
             return total;

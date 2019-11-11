@@ -26,11 +26,18 @@ public class WeightedDie
     }
     
     /**
-     * Randomizes the dice value
+     * Randomizes the dice value, with a greater chance of an even number
      */
     public void roll()
     {
-        diceValue = (int)(Math.random() * 6 + 1);
+        int rollNum = (int)(Math.random() * 6 + 1);
+        if (rollNum % 2 == 0)
+            diceValue = rollNum;
+        else
+        {
+            rollNum = (int)(Math.random() * 6 + 1);
+            diceValue = rollNum;
+        }
     }
     
     /**
