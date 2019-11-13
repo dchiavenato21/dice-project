@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Die here.
+ * Represents a die which has twice as high a chance to get an even number.
  *
  * @author (Daniel Chiavenato)
  * @version (11/1/19)
@@ -18,6 +18,7 @@ public class WeightedDie
     }
     
     /**
+     * Gets the current value of the die
      * @return Current value of the die
      */
     public int getValue()
@@ -41,6 +42,7 @@ public class WeightedDie
     }
     
     /**
+     * Returns the string format of the current value of the die
      * @return String format of current die value
      */
     @Override

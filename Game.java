@@ -1,15 +1,17 @@
 
 /**
- * Write a description of class Game here.
+ * Uses the Die class for multiple tests and games
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Daniel Chiavenato)
+ * @version (11/1/19)
  */
 public class Game
 {
     Die gameDie = new Die();
     WeightedDie weightedDie = new WeightedDie();
-    
+    /**
+     * Rolls the die for two players, and prints who got a higher number
+     */
     public void playGame()
     {
         int score1 = rollTwoDice();
@@ -23,7 +25,10 @@ public class Game
         else
             System.out.println("Tie!");
     }
-    
+
+    /**
+     * Same as playGame(), but player1 always wins
+     */
     public void playUnfairGame()
     {
         int score1 = rollTwoDice();
@@ -37,7 +42,11 @@ public class Game
         System.out.println("Player 2: " + score2);
         System.out.println("Player 1 Won!");
     }
-    
+
+    /**
+     * Rolls the die two times, and gets the sum of the two rolls
+     * @return sum of the two rolls
+     */
     private int rollTwoDice()
     {
         int sum = 0;
@@ -45,10 +54,15 @@ public class Game
         sum += gameDie.getValue();
         gameDie.roll();
         sum += gameDie.getValue();
-        
+
         return sum;
     }
-    
+
+    /**
+     * Counts how many rolls until the dice rolls an inputed integer
+     * @param num the integer you want the die to roll
+     * @return how many rolls it took to get the same number as num
+     */
     public int counter(int num)
     {
         if (!(num >= 1 && num <= 6))
@@ -69,7 +83,10 @@ public class Game
             return total;
         }
     }
-    
+
+    /**
+     * Same as counter, but uses the weighted die instead
+     */
     public int weightedCounter(int num)
     {
         if (!(num >= 1 && num <= 6))
